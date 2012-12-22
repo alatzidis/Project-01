@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library xmlns="http://www.eclipse.org/birt/2005/design" version="3.2.23" id="1">
+    <property name="units">in</property>
+    <property name="theme">defaultTheme</property>
+    <themes>
+        <theme name="defaultTheme" id="4"/>
+    </themes>
+    <page-setup>
+        <simple-master-page name="NewSimpleMasterPage" id="3"/>
+        <simple-master-page name="Simple MasterPage" id="5">
+            <property name="topMargin">0.34375in</property>
+            <property name="leftMargin">0.15625in</property>
+            <property name="rightMargin">0.11458333333333333in</property>
+            <property name="fontFamily">sans-serif</property>
+            <property name="fontSize">10pt</property>
+            <property name="headerHeight">80px</property>
+            <page-header>
+                <grid name="EMP - Master Header" id="6">
+                    <property name="height">0.71875in</property>
+                    <property name="width">7.989583333333333in</property>
+                    <column id="7">
+                        <property name="width">2.125in</property>
+                    </column>
+                    <column id="8">
+                        <property name="width">3.2083333333333335in</property>
+                    </column>
+                    <column id="9">
+                        <property name="width">2.65625in</property>
+                    </column>
+                    <row id="10">
+                        <property name="height">0.71875in</property>
+                        <cell id="11">
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderRightColor">#000000</property>
+                            <property name="borderRightStyle">solid</property>
+                            <property name="borderRightWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                            <image id="12">
+                                <property name="height">0.6145833333333334in</property>
+                                <property name="width">2in</property>
+                                <property name="source">url</property>
+                                <expression name="uri" type="javascript">"file:///C:/Users/calatzidis/d3v2/workspace/Project-01/reports/images/emp-logo.png"</expression>
+                            </image>
+                        </cell>
+                        <cell id="13">
+                            <property name="backgroundColor">#E5E5E5</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                        </cell>
+                        <cell id="14">
+                            <property name="backgroundColor">#E5E5E5</property>
+                            <property name="borderBottomColor">#000000</property>
+                            <property name="borderBottomStyle">solid</property>
+                            <property name="borderBottomWidth">thin</property>
+                            <property name="borderTopColor">#000000</property>
+                            <property name="borderTopStyle">solid</property>
+                            <property name="borderTopWidth">thin</property>
+                        </cell>
+                    </row>
+                </grid>
+            </page-header>
+            <page-footer>
+                <text id="15">
+                    <property name="contentType">html</property>
+                    <text-property name="content"><![CDATA[<value-of>new Date()</value-of>]]></text-property>
+                </text>
+            </page-footer>
+        </simple-master-page>
+    </page-setup>
+</library>
