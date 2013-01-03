@@ -59,7 +59,7 @@ public class BirtIntegration {
 	
 	private void runTasks(int reportType, String date) throws EngineException, IOException {
 		File reportDesign = null;
-		String outFile = EMPSettings.path_to_report_private_folder + "\\";
+		String outFile = EMPSettings.path_to_report_private_folder + "/";
 		StringBuffer feederContent = new StringBuffer();
 		feederContent.append("title;file;date;frequency;type\n");
 		switch (reportType) {
@@ -87,7 +87,7 @@ public class BirtIntegration {
 			try {Thread.sleep(1000);}catch(Exception e) {}
 			Document doc = Jsoup.parse(new File(outFile), "UTF-8", "");
 			String imagePath = doc.select("#__bookmark_1").attr("src");
-			File afile = new File(imagePath.replace("file:/", ""));
+			File afile = new File(imagePath.replace("file:", ""));
 			System.out.println("temp image path is : "  + afile);
 			String newPath = EMPSettings.smp_photos+ "/smp_" + date2 + ".png";
 			File bfile = new File(newPath);
@@ -111,7 +111,7 @@ public class BirtIntegration {
 			return;
 		case BirtIntegration.EMP_DAILY_POWER:
 			reportDesign = new File("reports/emp_daily.rptdesign");
-			outFile += EMPSettings.energy_path + "\\" + EMPSettings.daily_path + "\\" + EMPSettings.report_prefix + "-" + EMPSettings.power_prefix + "-" +	EMPSettings.daily_prefix + "_" + date + ".pdf";
+			outFile += EMPSettings.energy_path + "/" + EMPSettings.daily_path + "/" + EMPSettings.report_prefix + "-" + EMPSettings.power_prefix + "-" +	EMPSettings.daily_prefix + "_" + date + ".pdf";
 			feederContent.append("energy_daily_" + date + ";sites/all/files/private/energy/daily/" + EMPSettings.report_prefix + "-" + EMPSettings.power_prefix + "-" +	EMPSettings.daily_prefix + "_" + date + ".pdf" + ";" + date + ";Daily;Energy");
 			try {
 				runTasks(BirtIntegration.SMP_IMAGES, date + "#7");
@@ -127,13 +127,13 @@ public class BirtIntegration {
 			break;
 		case BirtIntegration.EMP_WEEKLY_POWER:
 			reportDesign = new File("reports/emp_weekly.rptdesign");			
-			outFile += EMPSettings.energy_path + "\\" + EMPSettings.weekly_path + "\\" + EMPSettings.report_prefix + "-" + EMPSettings.power_prefix + "-" +	EMPSettings.weekly_prefix + "_" + date + ".pdf";
-			feederContent.append("energy_weekly_" + date + ";sites/all/files/private/energy/weekly/" + EMPSettings.report_prefix + "-" + EMPSettings.power_prefix + "-" +	EMPSettings.daily_prefix + "_" + date + ".pdf" + ";" + date + ";Weekly;Energy");
+			outFile += EMPSettings.energy_path + "/" + EMPSettings.weekly_path + "/" + EMPSettings.report_prefix + "-" + EMPSettings.power_prefix + "-" +	EMPSettings.weekly_prefix + "_" + date + ".pdf";
+			feederContent.append("energy_weekly_" + date + ";sites/all/files/private/energy/weekly/" + EMPSettings.report_prefix + "-" + EMPSettings.power_prefix + "-" +	EMPSettings.weekly_prefix + "_" + date + ".pdf" + ";" + date + ";Weekly;Energy");
 			break;
 		case BirtIntegration.EMP_WEEKLY_EMMISSIONS:
-			reportDesign = new File("reports/emp_emmissions.rptdesign");
-			outFile += EMPSettings.emissions_path + "\\" + EMPSettings.weekly_path + "\\" + EMPSettings.report_prefix + "-" + EMPSettings.emmissions_prefix + "-" +	EMPSettings.weekly_prefix + "_" + date + ".pdf";
-			feederContent.append("emissions_weekly_" + date + ";sites/all/files/private/emissions/weekly/" + EMPSettings.report_prefix + "-" + EMPSettings.power_prefix + "-" +	EMPSettings.daily_prefix + "_" + date + ".pdf" + ";" + date + ";Weekly;Emission");
+			reportDesign = new File("reports/emp_emissions.rptdesign");
+			outFile += EMPSettings.emissions_path + "/" + EMPSettings.weekly_path + "/" + EMPSettings.report_prefix + "-" + EMPSettings.emmissions_prefix + "-" +	EMPSettings.weekly_prefix + "_" + date + ".pdf";
+			feederContent.append("emissions_weekly_" + date + ";sites/all/files/private/emissions/weekly/" + EMPSettings.report_prefix + "-" + EMPSettings.emmissions_prefix + "-" +	EMPSettings.weekly_prefix + "_" + date + ".pdf" + ";" + date + ";Weekly;Emission");
 			break;
 		default:
 			break;

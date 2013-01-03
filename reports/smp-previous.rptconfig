@@ -3,15 +3,15 @@
     <list-property name="configVars">
         <structure>
             <property name="name">__isdisplay__dateToForecast_360_0</property>
-            <property name="value">2012-12-05</property>
+            <property name="value">2012-12-31</property>
         </structure>
         <structure>
             <property name="name">__isdisplay__dateToForecast2_362_1</property>
-            <property name="value">7</property>
+            <property name="value">100</property>
         </structure>
         <structure>
             <property name="name">dateToForecast_360_2</property>
-            <property name="value">2012-12-05</property>
+            <property name="value">2012-12-31</property>
         </structure>
         <structure>
             <property name="name">dateToForecast_360_type_</property>
@@ -19,7 +19,7 @@
         </structure>
         <structure>
             <property name="name">dateToForecast2_362_3</property>
-            <property name="value">7</property>
+            <property name="value">100</property>
         </structure>
         <structure>
             <property name="name">dateToForecast2_362_type_</property>

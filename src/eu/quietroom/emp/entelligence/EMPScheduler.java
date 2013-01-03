@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import eu.quietroom.emp.entelligence.dbaccess.DBTools;
 import eu.quietroom.emp.entelligence.intervalIterators.DailyIntervalIterator;
+import eu.quietroom.emp.entelligence.intervalIterators.WeeklyReportIntervalIterator;
 import eu.quietroom.emp.entelligence.parsers.BNS_STATS_parser;
 import eu.quietroom.emp.entelligence.parsers.DAS_R_Parser;
 import eu.quietroom.emp.entelligence.parsers.DAS_UA_Parser;
@@ -164,7 +165,6 @@ public class EMPScheduler implements Runnable{
 		task_c_power_daily = new CreateReportTask("CREATE_DAILY_POWER_REPORT", new DailyIntervalIterator(EMPSettings.getDAS_R_1_1StartHour(), EMPSettings.getDAS_R_1_1StartMinute(), EMPSettings.getDAS_R_1_1EndHour(), EMPSettings.getDAS_R_1_1EndMinute()), task_c_power_daily_precs, EMPSettings.t_c_report_power_daily);
 		tasksList.add(task_c_power_daily);
 		
-		/*
 		ArrayList<EMPSchedulerTask> task_c_power_weekly_precs = new ArrayList<EMPSchedulerTask>();
 		task_c_power_weekly = new CreateReportTask("CREATE_WEEKLY_POWER_REPORT", new WeeklyReportIntervalIterator(), task_c_power_weekly_precs, EMPSettings.t_c_report_power_weekly);
 		tasksList.add(task_c_power_weekly);
@@ -172,7 +172,7 @@ public class EMPScheduler implements Runnable{
 		ArrayList<EMPSchedulerTask> task_c_emissions_weekly_precs = new ArrayList<EMPSchedulerTask>();
 		task_c_emissions_weekly = new CreateReportTask("CREATE_WEEKLY_EMISSIONS_REPORT", new WeeklyReportIntervalIterator(), task_c_emissions_weekly_precs, EMPSettings.t_c_report_emissions_weekly);
 		tasksList.add(task_c_emissions_weekly);
-		*/
+		
 	}
 	
 	@Override

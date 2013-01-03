@@ -882,7 +882,7 @@ order by sum_view.sum_date asc
           </Markers>
           <LineAttributes>
             <Style>Solid</Style>
-            <Thickness>1</Thickness>
+            <Thickness>4</Thickness>
             <Color>
               <Transparency>255</Transparency>
               <Red>0</Red>
@@ -1397,8 +1397,8 @@ order by sum_view.sum_date asc
             <property name="outputFormat">PNG</property>
             <property name="inheritColumns">true</property>
             <property name="dataSet">SMP</property>
-            <property name="height">4.395833333333333in</property>
-            <property name="width">7.958333333333333in</property>
+            <property name="height">2.09375in</property>
+            <property name="width">3.8541666666666665in</property>
             <list-property name="boundDataColumns">
                 <structure>
                     <property name="name">sum_data</property>
